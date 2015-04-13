@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,8 +33,9 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="#">Tableau de bord</a></li>
-          <li><a href="addCommande.php">Ajouter une Commande</a></li>
+          <li class="active"><a href="#">Commandes</a></li>
+          <li><a href="#">Factures</a></li>
+          <li><a href="#">Devis</a></li>
         </ul>
       </div>
     </div>
@@ -45,9 +46,9 @@
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
           <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Factures</a></li>
-          <li><a href="#">Devis</a></li>
-          <li><a href="#">Bons de commande</a></li>
+          <li><a href="addCommande.php">Ajouter une Commande</a></li>
+          <li><a href="#">Archives</a></li>
+          <li><a href="#">Corbeille</a></li>
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -107,7 +108,7 @@
                 <td>
                   <a href=""><img src="img/generate_docs.png"> </a>
                   <a href=""><img src="img/edit.png"> </a>
-                  <a href="img/delete.png"><img src="img/delete.png"></a>
+                  <a href= <?php echo "deleteCommande" ?> <img src="img/delete.png"></a>
                 </td>
               </tr>
               <?php

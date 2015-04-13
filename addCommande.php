@@ -33,9 +33,9 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Tableau de bord</a></li>
-          <li><a href="#">Ajouter une facture</a></li>
-          <li><a href="#">Ajouter un devis</a></li>
+          <li class="active"><a href="#">Commandes</a></li>
+          <li><a href="#">Factures</a></li>
+          <li><a href="#">Devis</a></li>
         </ul>
       </div>
     </div>
@@ -45,10 +45,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Factures</a></li>
-          <li><a href="#">Devis</a></li>
-          <li><a href="#">Bons de commande</a></li>
+          <li><a href="index.php">Overview</a></li>
+          <li class="active"><a href="#">Ajouter une Commande <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Archives</a></li>
+          <li><a href="#">Corbeille</a></li>
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -56,9 +56,9 @@
         <form role="form" method="post" action="addCommandeScript.php">
           <div class="form-group">
             <label for="InputDateCmd">Date de la commande</label>
-            <input id="InputDateCmd" name="InputDateCmd" type="date" class="form-control">
+            <input id="InputDateCmd" name="InputDateCmd" type="date" class="form-control" required>
           </div>
-          <select id="InputClient" name="InputClient" class="form-control" >
+          <select id="InputClient" name="InputClient" class="form-control" required>
             <?php
               // Trying to establish database connection
               try {
