@@ -108,7 +108,7 @@
                 <td>
                   <a href=""><img src="img/generate_docs.png"> </a>
                   <a href=""><img src="img/edit.png"> </a>
-                  <a href= <?php echo "deleteCommande" ?> <img src="img/delete.png"></a>
+                  <a href= "deleteCommandeScript.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>" > <img src="img/delete.png"></a>
                 </td>
               </tr>
               <?php

@@ -20,7 +20,5 @@ try {
 catch(Exception $e){
 	die('Error while trying to insert :' . $e->getMessage());
 }
-
-echo 'The line has correctly been added';
 header('Location: index.php');
 ?>
