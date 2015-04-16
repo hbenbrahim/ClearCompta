@@ -78,6 +78,7 @@
             ?>
             </option>
           </select>
+          <a href="addClient.php">Nouveau client ?</a>
           <div class="form-group">
             <label for="InputMontantDev">Montant de la facture</label>
             <input type="text" class="form-control" id="InputMontant" placeholder="Montant HT">

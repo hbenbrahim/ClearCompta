@@ -45,37 +45,14 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Overview <span class="sr-only">(current)</span></a></li>
           <li><a href="addCommande.php">Ajouter une Commande</a></li>
           <li><a href="#">Archives</a></li>
-          <li><a href="trash.php">Corbeille</a></li>
+          <li class="active"><a href="trash.php">Corbeille</a></li>
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Tableau de bord</h1>
-
-        <div class="row placeholders">
-          <div class="col-xs-4">
-            <h4>Test 1</h4>
-            <div id="canvas-holder">
-              <canvas id="chart-facture" width="500" height="500" />
-            </div>
-          </div>
-          <div class="col-xs-4">
-            <h4>Test 1</h4>
-            <div id="canvas-holder">
-              <canvas id="chart-devis" width="500" height="500" />
-            </div>
-          </div>
-          <div class="col-xs-4">
-            <h4>Test 1</h4>
-            <div id="canvas-holder">
-              <canvas id="chart-bons" width="500" height="500" />
-            </div>
-          </div>
-        </div>
-
-        <h2 class="sub-header">Commandes</h2>
+        <h1 class="page-header">Corbeille</h1>
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
@@ -96,7 +73,7 @@
                 catch(Exception $e) {
                   die( 'Erreur : '.$e->getMessage());
                   }
-                $result = $bdd->query('SELECT * FROM `Commande` ,`Client` WHERE Commande.id_client = Client.id_client and Commande.visible = true ORDER by id_commande');
+                $result = $bdd->query('SELECT * FROM `Commande` ,`Client` WHERE Commande.id_client = Client.id_client and Commande.visible = false ORDER by id_commande');
                 // Get lines from database
                 while($data = $result->fetch()){
               ?>
