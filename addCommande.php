@@ -52,7 +52,7 @@
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Ajouter un devis</h1>
+        <h1 class="page-header">Ajouter une Commande</h1>
         <form role="form" method="post" action="addCommandeScript.php">
           <div class="form-group">
             <label for="InputDateCmd">Date de la commande</label>
@@ -80,8 +80,10 @@
           </select>
           <a href="addClient.php">Nouveau client ?</a>
           <div class="form-group">
-            <label for="InputMontantDev">Montant de la facture</label>
-            <input type="text" class="form-control" id="InputMontant" placeholder="Montant HT">
+            <input type="number" class="form-control" id="InputMontant" placeholder="Montant TTC">
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="vehicle">TVA incluse (Décocher si Zone Franche)
           </div>
           <button type="submit" class="btn btn-default">Enregistrer</button>
         </form>

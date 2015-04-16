@@ -81,9 +81,9 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Num&eacute;ro</th>
                 <th>Date</th>
                 <th>Client</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
