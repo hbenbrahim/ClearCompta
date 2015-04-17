@@ -1,3 +1,10 @@
+<script>
+		if (confirm('Are you sure you want to save this thing into the database?')) {
+    // Save it!
+} else {
+    // Do nothing!
+}
+</script>
 <?php
   $id = $_GET['id'];
   // Trying to establish database connection
@@ -19,9 +26,5 @@
 	catch(Exception $e){
 		die('Error while trying to delete :' . $e->getMessage());
 	}
-  	if (isset($id) AND !(empty($id)))
-  	{
-	    echo $id;
-  	}
   	header('Location: index.php');
 ?>

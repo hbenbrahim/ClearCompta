@@ -80,7 +80,7 @@
           </select>
           <a href="addClient.php">Nouveau client ?</a>
           <div class="form-group">
-            <input type="number" class="form-control" id="InputMontant" placeholder="Montant TTC">
+            <input type="number" class="form-control" name="InputMontant" placeholder="Montant TTC">
           </div>
           <div class="form-group">
             <input type="checkbox" name="vehicle">TVA incluse (Décocher si Zone Franche)
