@@ -108,7 +108,7 @@
                 <td>
                   <a href=""><img src="img/generate_docs.png"> </a>
                   <a href=""><img src="img/edit.png"> </a>
-                  <a href= "deleteCommandeScript.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>" > <img src="img/delete.png"></a>
+                  <a onclick="return confirm('Cette publication sera envoyée à la corbeille')" href= "deleteCommandeScript.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>" > <img src="img/delete.png"></a>
                 </td>
               </tr>
               <?php
@@ -130,13 +130,4 @@
   <script src="js/Chart.js"></script>
   <script src="js/getCharts.js"></script>
 </body>
-
-<script>
-		if (confirm('Are you sure you want to save this thing into the database?')) {
-    // Save it!
-} else {
-    // Do nothing!
-}
-</script>
-
 </html>

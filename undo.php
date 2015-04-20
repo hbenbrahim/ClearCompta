@@ -11,13 +11,13 @@
 	}
 	// Delete a line if visible is false, make it go invisible if true
 	try {
-		$query = 'DELETE FROM Commande WHERE id_commande = ' . $id . ' and visible=false' ;
-		$query_alt = 'UPDATE Commande SET visible = 0 WHERE id_commande = ' . $id;
+		$query_alt = 'UPDATE Commande SET visible = 1 WHERE id_commande = ' . $id;
 		$bdd->exec($query);
 		$bdd->exec($query_alt);
 	}
 	catch(Exception $e){
 		die('Error while trying to delete :' . $e->getMessage());
 	}
-  	header('Location: trash.php');
+  	header('Location: index.php');
+?>
 ?>

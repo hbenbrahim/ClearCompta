@@ -83,9 +83,8 @@
                 <td> <?php echo $data['nom_client']; ?> </td>
                 <td> <?php echo $data['Status']; ?> </td>
                 <td>
-                  <a href=""><img src="img/generate_docs.png"> </a>
-                  <a href=""><img src="img/edit.png"> </a>
-                  <a href= "deleteCommandeScript.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>" > <img src="img/delete.png"></a>
+                  <a  href= "undo.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>"><img src="img/back.png"> </a>
+                  <a onclick="return confirm('Cette commande sera supprimée définitivement')" href= "deleteCommandeScript.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>" > <img src="img/delete.png"></a>
                 </td>
               </tr>
               <?php
