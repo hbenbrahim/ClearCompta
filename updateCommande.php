@@ -89,7 +89,8 @@
             </tbody>
           </table>
         </div>
-        <form role="form" method="post" action="addCommandeScript.php">
+        <form role="form" method="post" action="updateCommandeScript.php">
+          <input type="hidden" name="InputIdCommande" value="<?php echo $data['id_commande']; ?>" />
           <div class="form-group">
             <label for="InputDateCmd">Date de la commande</label>
             <input id="InputDateCmd"value= '<?php echo $data['date_commande']; ?>' name="InputDateCmd" type="date" class="form-control" required>

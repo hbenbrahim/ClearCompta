@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="col-xs-4">
-            <h4>Test 1</h4>
+            <h4>Commandes</h4>
             <div id="canvas-holder">
               <canvas id="chart-devis" width="500" height="500" />
             </div>
