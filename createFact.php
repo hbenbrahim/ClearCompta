@@ -27,7 +27,7 @@ $pdf->elementAdd('', 'traitBas', 'footer');
 // #2 Créer une facture 
 // 
 // numéro de facture, date, texte avant le numéro de page 
-$pdf->initFacture("Facture n° ".mt_rand(1, 99999)."-".mt_rand(1, 99999), "Kenitra le 29/05/2015", ""); 
+$pdf->initFacture("Facture n° ".mt_rand(1, 99999)."-".mt_rand(1, 99999)."\nBC n°".mt_rand(1, 99999), "Kenitra le 29/05/2015", ""); 
 // produit 
 $pdf->productAdd(array('Attrape mouche collant', 'C22M9', '10.00', '7', '70.00')); 
 $pdf->productAdd(array('Attrape mouche collant CRAFT', 'C42M3', '5.00', '7', '35.00')); 
