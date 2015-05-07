@@ -79,9 +79,40 @@
             </option>
           </select>
           <a href="addClient.php">Nouveau client ?</a>
-          <div class="form-group">
-            <input type="number" class="form-control" name="InputMontant" placeholder="Montant TTC">
-          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Produit</th>
+                <th>Prix Unitaire HT</th>
+                <th>Quantit&eacute;</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                // Trying to establish database connection
+                try {
+                  $bdd= new PDO( 'mysql:host=localhost;dbname=clearCompta;charset=utf8', 'root', '');
+                    }
+                catch(Exception $e) {
+                  die( 'Erreur : '.$e->getMessage());
+                  }
+                $result = $bdd->query('SELECT * FROM `Produit`');
+                // Get lines from database
+                while($data = $result->fetch()){
+              ?>
+              <tr>
+                <td> <input type="checkbox" id="check<?php echo $data['id_product'];?>" />  </td>
+                <td> <?php echo $data['designation_product']; ?> </td>
+                <td> <?php echo $data['ht_price_product']; ?> </td>
+                <td> <?php echo $data['Montant']; ?> </td>
+              </tr>
+              <?php
+                }
+              ?>
+            </tbody>
+          </table>
           <div class="form-group">
             <input type="checkbox" name="vehicle">TVA incluse (Décocher si Zone Franche)
           </div>

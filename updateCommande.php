@@ -45,7 +45,7 @@
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
           <li class="active"><a href="index.php">Overview</a> <span class="sr-only">(current)</span></li>
-          <li><a href="#">Ajouter une Commande</a></li>
+          <li><a href="addCommande.php">Ajouter une Commande</a></li>
           <li><a href="#">Archives</a></li>
           <li><a href="trash.php">Corbeille</a></li>
         </ul>
