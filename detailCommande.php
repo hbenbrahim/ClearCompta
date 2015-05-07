@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -45,37 +45,14 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-          <li><a href="addCommande.php">Ajouter une Commande</a></li>
+          <li class="active"><a href="index.php">Overview</a> <span class="sr-only">(current)</span></li>
+          <li><a href="#">Ajouter une Commande</a></li>
           <li><a href="#">Archives</a></li>
           <li><a href="trash.php">Corbeille</a></li>
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Tableau de bord</h1>
-
-        <div class="row placeholders">
-          <div class="col-xs-4">
-            <h4>Test 1</h4>
-            <div id="canvas-holder">
-              <canvas id="chart-facture" width="500" height="500" />
-            </div>
-          </div>
-          <div class="col-xs-4">
-            <h4>Commandes</h4>
-            <div id="canvas-holder">
-              <canvas id="chart-devis" width="500" height="500" />
-            </div>
-          </div>
-          <div class="col-xs-4">
-            <h4>Test 1</h4>
-            <div id="canvas-holder">
-              <canvas id="chart-bons" width="500" height="500" />
-            </div>
-          </div>
-        </div>
-
-        <h2 class="sub-header">Commandes</h2>
+        <h1 class="page-header">Modifier une Commande</h1>
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
@@ -85,11 +62,12 @@
                 <th>Client</th>
                 <th>Status</th>
                 <th>Montant</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <?php
+              	//Getting the id variable from index page
+              	$id = $_GET['id'];
                 // Trying to establish database connection
                 try {
                   $bdd= new PDO( 'mysql:host=localhost;dbname=clearCompta;charset=utf8', 'root', '');
@@ -97,9 +75,9 @@
                 catch(Exception $e) {
                   die( 'Erreur : '.$e->getMessage());
                   }
-                $result = $bdd->query('SELECT * FROM `Commande` ,`Client` WHERE Commande.id_client = Client.id_client and Commande.visible = true ORDER by id_commande');
+                $result = $bdd->query('SELECT * FROM `Commande` ,`Client` WHERE Commande.id_client = Client.id_client and Commande.id_commande = ' . $id);
                 // Get lines from database
-                while($data = $result->fetch()){
+                $data = $result->fetch();
               ?>
               <tr>
                 <td> <?php echo $data['id_commande']; ?> </td>
@@ -107,18 +85,14 @@
                 <td> <?php echo $data['nom_client']; ?> </td>
                 <td> <?php echo $data['Status']; ?> </td>
                 <td> <?php echo $data['Montant']; ?> </td>
-                <td>
-                  <a href="detailCommande.php?id=<?php echo "'" . $data['id_commande'] . "'"?>"><img src="img/generate_docs.png"> </a>
-                  <a href="updateCommande.php?id=<?php echo "'" . $data['id_commande'] . "'"?>"> <img src="img/edit.png"> </a>
-                  <a onclick="return confirm('Cette commande sera envoyée à la corbeille')" href= "deleteCommandeScript.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>" > <img src="img/delete.png"></a>
-                </td>
               </tr>
-              <?php
-                }
-              ?>
             </tbody>
           </table>
         </div>
+        <a onclick="return confirm('Cette commande sera considérée comme traitée est prête à être facturée')" href="createDevis.php" class="btn btn-info">Générer Devis</a>
+        <a onclick="return confirm('Cette commande sera considérée comme validée et facturée')" href="createFact.php" class="btn btn-primary">Générer Facture</a>
+      	<a onclick="return confirm('Cette commande sera considérée comme payée et sera archivée')" type="submit" class="btn btn-success">Archiver</a>
+      	<a onclick="return confirm('Cette commande sera envoyée à la corbeille')" type="submit" href="deleteCommandeScript.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>" class="btn btn-danger">Annuler</a>
       </div>
     </div>
   </div>
@@ -127,9 +101,7 @@
     ================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <!-- Charts.JS Javascript
-    ================================================== -->
-  <script src="js/Chart.js"></script>
-  <script src="js/getCharts.js"></script>
+
 </body>
+
 </html>
