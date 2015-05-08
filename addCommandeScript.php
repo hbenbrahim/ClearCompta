@@ -20,10 +20,23 @@ try {
 	else {
 		$query = 'INSERT INTO Commande(id_client, date_commande) VALUES(' . $id_client . ', "' . $date_commande . '")' ;
 	}
-	$bdd->exec($query);
+	//$bdd->exec($query);
 }
 catch(Exception $e){
 	die('Error while trying to insert :' . $e->getMessage());
 }
-header('Location: index.php');
+$result_cc = $bdd->query('SELECT MAX(id_commande) FROM Commande');
+$current_commande = $result_cc->fetch();
+$qte_commande = $_POST[''];
+$prix_final = $_POST[''];
+if(isset($_POST['product'])){
+	$product = $_POST['product'];
+	foreach ($product as $products=>$value) {
+     $query = 'INSERT INTO `Produit_Commande` (`product_id`, `commande_id`, `product_quantity`, `final_price`) VALUES (' . $value . ' ,' . $current_commande[0] . ' , , );';
+    }
+}
+
+//header('Location: index.php');
+
+
 ?>

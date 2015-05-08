@@ -86,6 +86,7 @@
                 <th>Produit</th>
                 <th>Prix Unitaire HT</th>
                 <th>Quantit&eacute;</th>
+                <th>Prix final</th>
                 <th>Total</th>
               </tr>
             </thead>
@@ -93,7 +94,7 @@
               <?php
                 // Trying to establish database connection
                 try {
-                  $bdd= new PDO( 'mysql:host=localhost;dbname=clearCompta;charset=utf8', 'root', '');
+                  $bdd= new PDO('mysql:host=localhost;dbname=clearCompta;charset=utf8', 'root', '');
                     }
                 catch(Exception $e) {
                   die( 'Erreur : '.$e->getMessage());
@@ -103,10 +104,12 @@
                 while($data = $result->fetch()){
               ?>
               <tr>
-                <td> <input type="checkbox" id="check<?php echo $data['id_product'];?>" />  </td>
+                <td> <input type="checkbox" name="product[]" value="<?php echo $data['designation_product']; ?>" />  </td>
                 <td> <?php echo $data['designation_product']; ?> </td>
                 <td> <?php echo $data['ht_price_product']; ?> </td>
-                <td> <?php echo $data['Montant']; ?> </td>
+                <td> <input onkeyup="compute(<?php echo $data['id_product']; ?>);" type="number" id="qte_commande<?php echo $data['id_product']; ?>" name="qte_commande" class="form-control" required> </td>
+                <td> <input onkeyup="compute(<?php echo $data['id_product']; ?>);" type="number" id="prix_final<?php echo $data['id_product']; ?>" name="prix_final" class="form-control" required> </td>
+                <td> <input type="number" id="total<?php echo $data['id_product']; ?>" name="total" class="form-control" readonly> </td>
               </tr>
               <?php
                 }
@@ -114,7 +117,7 @@
             </tbody>
           </table>
           <div class="form-group">
-            <input type="checkbox" name="vehicle">TVA incluse (Décocher si Zone Franche)
+            <input type="checkbox" name="tva">TVA incluse (Décocher si Zone Franche)
           </div>
           <button type="submit" class="btn btn-default">Enregistrer</button>
         </form>
@@ -126,7 +129,7 @@
     ================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-
+  <script src="js/compute_total.js"></script>
 </body>
 
 </html>
