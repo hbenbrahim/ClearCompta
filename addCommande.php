@@ -86,8 +86,8 @@
                 <th>Produit</th>
                 <th>Prix Unitaire HT</th>
                 <th>Quantit&eacute;</th>
-                <th>Prix final</th>
-                <th>Total</th>
+                <th>Prix final (MAD)</th>
+                <th>Total TTC (MAD)</th>
               </tr>
             </thead>
             <tbody>
@@ -104,16 +104,24 @@
                 while($data = $result->fetch()){
               ?>
               <tr>
-                <td> <input type="checkbox" name="product[]" value="<?php echo $data['designation_product']; ?>" />  </td>
+                <td> <input onchange="get_total();" type="checkbox" name="product[]" value="<?php echo $data['id_product']; ?>" />  </td>
                 <td> <?php echo $data['designation_product']; ?> </td>
                 <td> <?php echo $data['ht_price_product']; ?> </td>
-                <td> <input onkeyup="compute(<?php echo $data['id_product']; ?>);" type="number" id="qte_commande<?php echo $data['id_product']; ?>" name="qte_commande" class="form-control" required> </td>
-                <td> <input onkeyup="compute(<?php echo $data['id_product']; ?>);" type="number" id="prix_final<?php echo $data['id_product']; ?>" name="prix_final" class="form-control" required> </td>
-                <td> <input type="number" id="total<?php echo $data['id_product']; ?>" name="total" class="form-control" readonly> </td>
+                <td> <input onchange="compute(<?php echo $data['id_product']; ?>);" type="number" id="qte_commande<?php echo $data['id_product']; ?>" name="qte_commande<?php echo $data['id_product']; ?>" class="form-control" value="1" required> </td>
+                <td> <input onchange="compute(<?php echo $data['id_product']; ?>);" type="number" id="prix_final<?php echo $data['id_product']; ?>" name="prix_final<?php echo $data['id_product']; ?>" class="form-control" value="<?php echo $data['ht_price_product']; ?>" required> </td>
+                <td> <input type="number" id="total<?php echo $data['id_product']; ?>" name="total" class="form-control" value="<?php echo $data['ht_price_product']; ?>" readonly> </td>
               </tr>
               <?php
                 }
               ?>
+              <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td><input type="number" id="total_e" name="total_e" class="form-control" value="0" readonly> </td>
+              </tr>
             </tbody>
           </table>
           <div class="form-group">
