@@ -34,8 +34,8 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="#">Commandes</a></li>
-          <li><a href="#">Factures</a></li>
-          <li><a href="#">Devis</a></li>
+          <li><a href="#">Clients</a></li>
+          <li><a href="#">Produits</a></li>
         </ul>
       </div>
     </div>
@@ -131,5 +131,4 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/compute_total.js"></script>
 </body>
-
 </html>

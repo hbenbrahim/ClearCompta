@@ -32,6 +32,7 @@ $prix_final = $_POST[''];
 if(isset($_POST['product'])){
 	$product = $_POST['product'];
 	foreach ($product as $products=>$value) {
+	 echo $_POST('qte_commande');
      $query = 'INSERT INTO `Produit_Commande` (`product_id`, `commande_id`, `product_quantity`, `final_price`) VALUES (' . $value . ' ,' . $current_commande[0] . ' , , );';
     }
 }
