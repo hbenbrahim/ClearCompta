@@ -8,18 +8,17 @@ function compute(id) {
  	total = qte_commande.value * prix_final.value ;
  	totalAff.value = Math.round(total * 100) / 100;
  }
- function get_total(){
+ function get_total(id){
  	var choices = [];
  	var ttl = 0;
 	var els = document.getElementsByName('product[]');
 	for (var i=0;i<els.length;i++){
   		if ( els[i].checked ) {
+  			pu_string = 'prix_final'+els[i].value;
+  			pu_aff = document.getElementById(pu_string);
     		choices.push(els[i].value);
-    		console.log("els[i].value : " + els[i].value);
+    		ttl = parseInt(ttl) + parseInt(pu_aff.value);
   		}
 	}
-	for (var i=0;i<choices.lenght;i++){
-		ttl = ttl + choices[i];
-	}
-	console.log(ttl);
+	total_e.value = ttl;
  }

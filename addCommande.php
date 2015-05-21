@@ -104,7 +104,7 @@
                 while($data = $result->fetch()){
               ?>
               <tr>
-                <td> <input onchange="get_total();" type="checkbox" name="product[]" value="<?php echo $data['id_product']; ?>" />  </td>
+                <td> <input onchange="get_total(<?php echo $data['id_product']; ?>);" type="checkbox" name="product[]" value="<?php echo $data['id_product']; ?>" />  </td>
                 <td> <?php echo $data['designation_product']; ?> </td>
                 <td> <?php echo $data['ht_price_product']; ?> </td>
                 <td> <input onchange="compute(<?php echo $data['id_product']; ?>);" type="number" id="qte_commande<?php echo $data['id_product']; ?>" name="qte_commande<?php echo $data['id_product']; ?>" class="form-control" value="1" required> </td>
