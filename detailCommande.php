@@ -89,8 +89,8 @@
             </tbody>
           </table>
         </div>
-        <a onclick="return confirm('Cette commande sera considérée comme traitée est prête à être facturée')" href="createDevis.php" class="btn btn-info">Générer Devis</a>
-        <a onclick="return confirm('Cette commande sera considérée comme validée et facturée')" href="createFact.php" class="btn btn-primary">Générer Facture</a>
+        <a onclick="return confirm('Cette commande sera considérée comme traitée est prête à être facturée')" href="createDevis.php?id=<?php echo "'" . $data['id_commande'] . "'"?>" class="btn btn-info">Générer Devis</a>
+        <a onclick="return confirm('Cette commande sera considérée comme validée et facturée')" href="createFact.php?id=<?php echo "'" . $data['id_commande'] . "'"?>" class="btn btn-primary">Générer Facture</a>
       	<a onclick="return confirm('Cette commande sera considérée comme payée et sera archivée')" type="submit" class="btn btn-success">Archiver</a>
       	<a onclick="return confirm('Cette commande sera envoyée à la corbeille')" type="submit" href="deleteCommandeScript.php?id=<?php echo "'" . $data['id_commande'] . "'" ?>" class="btn btn-danger">Annuler</a>
       </div>

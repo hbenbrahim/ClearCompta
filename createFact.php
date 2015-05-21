@@ -6,7 +6,7 @@ require('facturePDF.php');
 // adresse de l'entreprise qui émet la facture 
 $adresse = " \n1 Imm15 Rue M - Residence Noor\n12321 Val Fleury Bureau 1 Kenitra\n\nsmartdesign12@gmail.com\n05 50 00 58 13 - 06 27 36 43 81"; 
 // adresse du client 
-$adresseClient = "WebuildMedia\nMaghrib Arabi C22\n88154 Imm Firdaous Kenitra"; 
+$adresseClient = "WebuildMedia\nMaghrib Arabi C22 Imm Firdaous\n Kenitra"; 
 // initialise l'objet facturePDF 
 $pdf = new facturePDF($adresse, $adresseClient, "Smart Design - Imm15 Rue M - Residence Noor - Val Fleury Bureau 1 Kenitra - smartdesign12@gmail.com - 05 50 00 58 13 - 06 27 36 43 81\nLes produits livrés demeurent la propriété exclusive de notre entreprise jusqu'au paiement complet de la présente facture. Paiment sous 60 jours.\nRCS : 37409 - IF : 29153278 / CNSS : 8998942\nCB : 011 33000 00062100002544 05 - BMCE Kenitra Av Imam Ali"); 
 // défini le logo 
