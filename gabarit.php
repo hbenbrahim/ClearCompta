@@ -2,7 +2,7 @@
 // coordonnée de l'entreprise 
 $pdf->template['header']['fontSize'] = 11; 
 $pdf->template['header']['lineHeight'] = 5; 
-$pdf->template['header']['margin'] = array(24, 0, 0, 10); 
+$pdf->template['header']['margin'] = array(27, 0, 0, 10); 
 // numéro de page 
 $pdf->template['infoPage']['margin'] = array(5, 5, 0, 0); 
 $pdf->template['infoPage']['align'] = 'R'; 
@@ -38,10 +38,10 @@ $pdf->template['product']['padding'] = array(1, 4, 1, 4);
 // entete des totaux 
 $pdf->template['totalHead']['lineHeight'] = 1; 
 $pdf->template['totalHead']['backgroundColor'] = array('r'=>156, 'g'=>68, 'b'=>154); 
-$pdf->template['totalHead']['margin'] = array(10, 0, 0, 0); 
+$pdf->template['totalHead']['margin'] = array(30, 0, 0, 0); 
 // liste des totaux 
 $pdf->template['total']['lineHeight'] = 5; 
-$pdf->template['total']['margin'] = array(0, 0, 0, 120); 
+$pdf->template['total']['margin'] = array(0, 0, 0, 125); 
 $pdf->template['total']['padding'] = array(2, 0, 0, 0); 
 // element personnalisé 1 
 $pdf->template['traitEnteteProduit']['lineHeight'] = 1; 
@@ -50,6 +50,6 @@ $pdf->template['traitEnteteProduit']['margin'] = array(80, 0, 0, 0);
 // element personnalisé 2 
 $pdf->template['traitBas']['lineHeight'] = 1; 
 $pdf->template['traitBas']['backgroundColor'] = array('r'=>255, 'g'=>210, 'b'=>255); 
-$pdf->template['traitBas']['margin'] = array(290, 40, 0, 40); 
+$pdf->template['traitBas']['margin'] = array(500, 40, 0, 670); 
 
 ?>
